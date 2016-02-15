@@ -33,4 +33,13 @@ public class MouseController : MonoBehaviour {
 		lastFramePosition =  Camera.main.ScreenToWorldPoint (Input.mousePosition);
 		lastFramePosition.z = 0;
 	}
+
+	Tile GetTileAtWorldCord(Vector3 cord){
+		int x = Mathf.FloorToInt(cord.x);
+		int y = Mathf.FloorToInt(cord.y);
+
+
+
+		return World.GetTileAt (x, y);
+	}
 }

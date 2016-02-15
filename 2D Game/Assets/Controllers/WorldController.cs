@@ -3,15 +3,20 @@ using System.Collections;
 
 
 public class WorldController : MonoBehaviour {
+
+	static WorldController _instance;
+
+	public static WorldController Instance { get; protected set;}
+
 	public Sprite dirtSprite;
 	public Sprite waterSprite;
 
 
-	World world;
+	public World world { get; protected set;}
 	// Use this for initialization
 	void Start () {
 		world = new World();
-
+		_instance = this;
 
 		//Create game object for each tile
 		for (int x = 0; x < world.Width; x++) {
